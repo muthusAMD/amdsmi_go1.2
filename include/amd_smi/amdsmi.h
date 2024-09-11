@@ -1529,7 +1529,7 @@ typedef struct {
 
 //! Place-holder "variant" for functions that have don't have any variants,
 //! but do have monitors or sensors.
-#define AMDSMI_DEFAULT_VARIANT 0xFFFFFFFFFFFFFFFF
+#define AMDSMI_DEFAULT_VARIANT 0xFFFFFFFF
 
 #ifdef ENABLE_ESMI_LIB
 /**
@@ -1611,7 +1611,7 @@ typedef struct {
 /**
  * @brief HSMP Metrics table (supported only with hsmp proto version 6).
  */
-typedef struct __attribute__((__packed__)){
+typedef struct {
     uint32_t accumulation_counter;
 
     /* TEMPERATURE */
@@ -1814,8 +1814,8 @@ amdsmi_status_t amdsmi_get_socket_handles(uint32_t *socket_count,
  *
  *  @return ::amdsmi_status_t | ::AMDSMI_STATUS_SUCCESS on success, non-zero on fail
  */
-amdsmi_status_t amdsmi_get_cpusocket_handles(uint32_t *socket_count,
-                amdsmi_cpusocket_handle* socket_handles);
+//amdsmi_status_t amdsmi_get_cpusocket_handles(uint32_t *socket_count,
+//                amdsmi_cpusocket_handle* socket_handles);
 #endif
 
 /**
@@ -1973,9 +1973,9 @@ amdsmi_status_t amdsmi_get_processor_handles(amdsmi_socket_handle socket_handle,
  *
  *  @return ::amdsmi_status_t | ::AMDSMI_STATUS_SUCCESS on success, non-zero on fail
 */
-amdsmi_status_t amdsmi_get_cpucore_handles(amdsmi_cpusocket_handle socket_handle,
-                                    uint32_t *processor_count,
-                                    amdsmi_processor_handle* processor_handles);
+//amdsmi_status_t amdsmi_get_cpucore_handles(amdsmi_cpusocket_handle socket_handle,
+//                                    uint32_t *processor_count,
+//                                    amdsmi_processor_handle* processor_handles);
 #endif
 
 /**
